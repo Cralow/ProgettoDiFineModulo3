@@ -65,11 +65,21 @@ public class Gun : MonoBehaviour
                 Vector3 diff = gameObject.transform.position - go.transform.position;
                 distanzaAttuale = diff.magnitude;
 
-                if (distanzaAttuale < distanza2 && distanzaAttuale < weaponRange)
+                if (distanzaAttuale < distanza2 )
                 {
-                   distanza2 = distanzaAttuale;
+                    if(distanzaAttuale < weaponRange)
+                    {
+                        distanza2 = distanzaAttuale;
 
-                    obj = go;
+                        obj = go;
+                    }
+                    else
+                    {
+                        obj = null;
+                    }
+
+
+
                 }
 
 
